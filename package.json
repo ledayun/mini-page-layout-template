@@ -1,0 +1,22 @@
+{
+  "name": "mini-page-layout-template",
+  "version": "1.0.0",
+  "description": "小程序页面布局项目模板",
+  "private": true,
+  "main": ".eslintrc.js",
+  "scripts": {
+    "unocss": "unocss pages/**/*.wxml -c unocss.config.js --watch -o unocss.wxss",
+    "unocss:build": "unocss pages/**/*.wxml -c unocss.config.js -o  unocss.wxss",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.1.50",
+    "@unocss/preset-icons": "^0.51.12",
+    "unocss": "^0.51.12"
+  },
+  "dependencies": {
+    "@vant/weapp": "^1.10.18"
+  }
+}
