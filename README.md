@@ -1,10 +1,10 @@
 # 小程序页面布局模板
 ## 概述
-本模板使用 UI 组件库使用 [vant](https://vant-contrib.gitee.io/vant-weapp/#/home)
+本模板 UI 组件库使用 [vant](https://vant-contrib.gitee.io/vant-weapp/#/home)
 
-本模板推荐使用原子 CSS 来实现组件库外的样式，原子 CSS 实现方案为[UnoCSS](https://unocss.dev/)([中文](https://alfred-skyblue.github.io/unocss-docs-cn/)) 
+本模板推荐使用原子 CSS 来实现组件库外的样式，原子 CSS 实现方案为[UnoCSS](https://unocss.dev/)([中文](https://alfred-skyblue.github.io/unocss-docs-cn/))
 
-## vant 库的使用
+## Vant 库的使用
 1. 在页面的 json 配置文件中引入组件
 ```
 "usingComponents": {
@@ -47,7 +47,7 @@ UnoCSS 支持使用 class 来展示图标，图标支持单色（可指定颜色
 
 ###
 常见图标集合有：
-* @iconify-json/tabler https://tabler-icons.io/ 
+* @iconify-json/tabler https://tabler-icons.io/
 * 更多图标集合 https://icones.js.org/ 或 https://icones.js.org/
 * 包名查找 https://www.npmjs.com/search?q=%40iconify-json
 
