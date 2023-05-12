@@ -9,6 +9,7 @@ module.exports = {
     browser: true,
     node: true,
   },
+  extends: 'airbnb-base',
   ecmaFeatures: {
     modules: true,
   },
@@ -27,5 +28,8 @@ module.exports = {
     requireMiniProgram: true,
   },
   // extends: 'eslint:recommended',
-  rules: {},
+  rules: {
+    'no-underscore-dangle': 'off',
+    semi: 'off',
+  },
 }
