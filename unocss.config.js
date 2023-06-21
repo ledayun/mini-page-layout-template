@@ -6,6 +6,10 @@ const remRE = /^-?[.\d]+rem$/
 
 export default defineConfig(
   {
+    rules: [
+      [/^w-p(\d+)$/, ([, d]) => ({ width: `${d}%` })],
+      [/^h-p(\d+)$/, ([, d]) => ({ height: `${d}%` })],
+    ],
     presets: [
       presetIcons({
         extraProperties: {
@@ -18,6 +22,13 @@ export default defineConfig(
     theme: {
       // 解决小程序不支持 * 选择器
       preflightRoot: ['page,::before,::after'],
+      fontSize: {
+        xs: '0.5rem', // 10
+        sm: '0.75rem', // 12
+        base: '0.875rem', // 14
+        lg: '1rem', // 16
+        xl: '1.125rem', // 18
+      },
     },
     postprocess(util) {
       // 自定义rem 转 rpx
