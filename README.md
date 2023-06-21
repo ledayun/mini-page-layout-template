@@ -5,13 +5,20 @@
 本模板推荐使用原子 CSS 来实现组件库外的样式，原子 CSS 实现方案为[UnoCSS](https://unocss.dev/)([中文](https://alfred-skyblue.github.io/unocss-docs-cn/))
 
 ## Vant 库的使用
-1. 在页面的 json 配置文件中引入组件
+1. 安装依赖包
+`npm install`
+
+2. 在页面的 json 配置文件中引入组件
 ```
 "usingComponents": {
   "van-button": "@vant/weapp/button/index"
 }
 ```
-2. 在页面中使用
+
+3. 生成小程序的包引用文件
+点击菜单**工具**，再点**构建 npm**（注意，每次引用新的组件，都要重复此步骤）
+
+4. 在页面中使用
 ```html
   <van-button type="primary">{{motto}}</van-button>
 ```
