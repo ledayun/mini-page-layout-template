@@ -51,3 +51,15 @@ UnoCSS 支持使用 class 来展示图标，图标支持单色（可指定颜色
 * 更多图标集合 https://icones.js.org/ 或 https://icones.js.org/
 * 包名查找 https://www.npmjs.com/search?q=%40iconify-json
 
+## 覆盖 Vant 库
+建议在全局样式文件 app.wxss 中声明 Vant 库的 CSS 变量值，具体变量名称可查阅 Vant 库[文档](https://vant-contrib.gitee.io/vant-weapp/#/theme)或[源代码](https://github.com/youzan/vant-weapp/tree/dev/packages)
+```css
+page {
+  background: white;
+  --main-color: #e49648;
+  --button-primary-background-color: var(--main-color);
+  --button-primary-border-color: var(--main-color);
+}
+```
+
+
