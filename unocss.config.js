@@ -1,14 +1,29 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { defineConfig, presetUno } from 'unocss'
+import { defineConfig } from 'unocss'
 import presetIcons from '@unocss/preset-icons'
-
-const remRE = /^-?[.\d]+rem$/
+import {
+  presetApplet,
+  presetRemRpx,
+} from 'unocss-applet'
 
 export default defineConfig(
   {
     rules: [
       [/^w-p(\d+)$/, ([, d]) => ({ width: `${d}%` })],
       [/^h-p(\d+)$/, ([, d]) => ({ height: `${d}%` })],
+      [/^p-p(\d+)$/, ([, d]) => ({ padding: `${d}%` })],
+      [/^pl-p(\d+)$/, ([, d]) => ({ 'padding-left': `${d}%` })],
+      [/^pr-p(\d+)$/, ([, d]) => ({ 'padding-right': `${d}%` })],
+      [/^pt-p(\d+)$/, ([, d]) => ({ 'padding-top': `${d}%` })],
+      [/^pb-p(\d+)$/, ([, d]) => ({ 'padding-bottom': `${d}%` })],
+      [/^px-p(\d+)$/, ([, d]) => ({
+        'padding-left': `${d}%`,
+        'padding-right': `${d}%`,
+      })],
+      [/^py-p(\d+)$/, ([, d]) => ({
+        'padding-top': `${d}%`,
+        'padding-bottom': `${d}%`,
+      })],
     ],
     presets: [
       presetIcons({
@@ -17,11 +32,10 @@ export default defineConfig(
           'vertical-align': 'middle',
         },
       }),
-      presetUno(),
+      presetApplet(),
+      presetRemRpx(),
     ],
     theme: {
-      // 解决小程序不支持 * 选择器
-      preflightRoot: ['page,::before,::after'],
       fontSize: {
         xs: '0.5rem', // 10
         sm: '0.75rem', // 12
@@ -29,16 +43,6 @@ export default defineConfig(
         lg: '1rem', // 16
         xl: '1.125rem', // 18
       },
-    },
-    postprocess(util) {
-      // 自定义rem 转 rpx
-      util.entries.forEach((i) => {
-        const value = i[1]
-        if (value && typeof value === 'string' && remRE.test(value)) {
-          // eslint-disable-next-line no-param-reassign
-          i[1] = `${value.slice(0, -3) * 16 * 2}rpx`
-        }
-      })
     },
   },
 )

@@ -5,8 +5,8 @@
   "private": true,
   "main": ".eslintrc.js",
   "scripts": {
-    "unocss": "unocss pages/**/*.wxml -c unocss.config.js --watch -o unocss.wxss",
-    "unocss:build": "unocss pages/**/*.wxml -c unocss.config.js -o  unocss.wxss",
+    "unocss": "unocss pages/**/*.wxml pages/**/**/*.wxml components/**/*.wxml -c unocss.config.js --watch -o unocss.wxss",
+    "unocss:build": "unocss pages/**/*.wxml pages/**/**/*.wxml components/**/*.wxml -c unocss.config.js -o unocss.wxss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,7 +17,8 @@
     "eslint": "^7.11.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
-    "unocss": "^0.51.12"
+    "unocss": "^0.51.12",
+    "unocss-applet": "^0.5.3"
   },
   "dependencies": {
     "@vant/area-data": "^1.4.1",
